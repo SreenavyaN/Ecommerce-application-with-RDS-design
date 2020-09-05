@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aroma Shop - Registration</title>
+	<link rel="icon" href="{{ url_for('static',filename='img/Fevicon.png')}}" type="image/png">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap/bootstrap.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='fontawesome/css/all.min.css') }}">
+	<link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='themify-icons/themify-icons.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='nice-select/nice-select.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.carousel.min.css') }}">
+
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+  <!--================ Start Header Menu Area =================-->
+	{% include "managerheader.html" %} 
+	<!--================ End Header Menu Area =================-->
+<!--================ Start ITEM View Area =================-->
+
+<section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <h2>Available <span class="section-intro__style">Product</span></h2>
+        </div>
+        <div class="row">
+		  <table>
+    <thead>
+    <tr>
+        <th>Item ID</th>
+        <th>Description</th>
+        <th>Unit Price</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>  
+</div>        
+</section>
+
+<!--================ Start Manager Access Area =================-->
+
+ <!--================ Start footer Area  =================-->	
+	{% include "footer.html" %} 
+ {% include "scripts.html" %} 
+	<!--================ End footer Area  =================-->
+</body>
+</html>

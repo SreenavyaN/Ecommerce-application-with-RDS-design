@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aroma Shop - Registration</title>
+	<link rel="icon" href="{{ url_for('static',filename='img/Fevicon.png')}}" type="image/png">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap/bootstrap.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='fontawesome/css/all.min.css') }}">
+	<link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='themify-icons/themify-icons.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='nice-select/nice-select.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.carousel.min.css') }}">
+
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+  
+	<!--================ Start Header Menu Area =================-->
+	 {% include "customerheader.html" %} 
+	<!--================ End Header Menu Area =================-->
+	
+<!--================ Start Manager Access Area =================-->
+
+<section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <h2>Order <span class="section-intro__style">History</span></h2>
+        </div>
+        <div class="row">
+	<table border="2px">
+    <thead>
+    <tr>
+        <th>Invoice ID</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for key in data %}
+		{% for val in data[key] %}
+            <tr>
+				<td>{{ key }}</td>
+				
+                <td>{{ val[0] }}</td>
+            </tr>
+			{% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+</div>  
+</div>        
+</section>
+
+
+<!--================ Start Manager Access Area =================-->
+
+ <!--================ Start footer Area  =================-->	
+	{% include "footer.html" %} 
+ {% include "scripts.html" %} 
+	<!--================ End footer Area  =================-->
+
+
+
+  <script src="{{ url_for('static',filename='jquery/jquery-3.2.1.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='bootstrap/bootstrap.bundle.min.js') }}"></script>
+  
+  <script src="{{ url_for('static',filename='skrollr.min.js') }}"></script>
+  
+  <script src="{{ url_for('static',filename='owl-carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='nice-select/jquery.nice-select.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='jquery.ajaxchimp.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='mail-script.js') }}"></script>
+  <script src="{{ url_for('static',filename='main.js') }}"></script>
+</body>
+</html>

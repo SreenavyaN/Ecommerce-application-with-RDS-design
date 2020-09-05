@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aroma Shop - Home</title>
+	<link rel="icon" href="img/Fevicon.png" type="image/png">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap/bootstrap.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='fontawesome/css/all.min.css') }}">
+	<link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='themify-icons/themify-icons.css') }}">>
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='nice-select/nice-select.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.carousel.min.css') }}">
+
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+  <!--================ Start Header Menu Area =================-->
+	{% include "managerheader.html" %}
+	<!--================ End Header Menu Area =================-->
+<!--================ Start Manager Access Area =================-->
+
+<section class="tracking_box_area section-margin--small">
+      <div class="container">
+	  <h1>Welcome Manager!</h1>
+          <div class="tracking_box_inner">
+              
+              <form class="row tracking_form" action="{{url_for('manager_delete_customer')}}" method="post" novalidate="novalidate">
+			  
+                  <div class="col-md-12 form-group">
+				  <h5> Remove existing Customer</h5>
+                      <input type="text" class="form-control" id="customerid" name="customerid" placeholder="CustomerID" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Customer ID'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                      <button type="submit" value="submit" class="button button-tracking">Remove</button>
+                  </div>
+				  </form>
+				  <p>______________________________________________</p>
+				  <form class="row tracking_form" action="{{url_for('manager_add_item')}}" method="post" novalidate="novalidate">
+				  <div class="col-md-12 form-group">
+				  <h5> Add a new item to the Store</h5>
+                      <input type="text" class="form-control" id="description" name="description" placeholder="Item Description" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Item Description'">
+					  <input type="text" class="form-control" id="unitprice" name="unitprice" placeholder="Item Price" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Item Price'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                      <button type="submit" value="submit" class="button button-tracking">Add</button>
+                  </div>
+				  </form>
+				  <p>______________________________________________</p>
+				  <form class="row tracking_form" action="{{url_for('manager_delete_item')}}" method="post" novalidate="novalidate">
+				<div class="col-md-12 form-group">
+				  <h5> Remove an Item from the Store</h5>
+                      <input type="text" class="form-control" id="stockcode" name="stockcode" placeholder="Item Code" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Item Code'">
+					                   </div>
+                  <div class="col-md-12 form-group">
+                      <button type="submit" value="submit" class="button button-tracking">Remove</button>
+                  </div>
+			  </form>
+          </div>
+      </div>
+  </section>
+
+
+
+
+
+<!--================ Start Manager Access Area =================-->
+
+ <!--================ Start footer Area  =================-->	
+	{% include "footer.html" %} 
+ {% include "scripts.html" %} 
+</body>
+</html>

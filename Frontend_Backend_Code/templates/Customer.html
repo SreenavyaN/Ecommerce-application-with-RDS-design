@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aroma Shop - Customer</title>
+	<link rel="icon" href="{{ url_for('static',filename='img/Fevicon.png')}}" type="image/png">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap/bootstrap.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='fontawesome/css/all.min.css') }}">
+	<link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='themify-icons/themify-icons.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='nice-select/nice-select.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='owl-carousel/owl.carousel.min.css') }}">
+
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+  <!--================ Start Header Menu Area =================-->
+	{% include "customerheader.html" %}
+	<!--================ End Header Menu Area =================-->
+
+<!--================ Start Customer Access Area =================-->
+
+<section class="tracking_box_area section-margin--small">
+      <div class="container">
+          <div class="tracking_box_inner">
+              <h1>Welcome Customer!</h1>
+              
+          </div>
+      </div>
+  </section>
+
+<!--================ Start Customer Access Area =================-->
+
+ <!--================ Start footer Area  =================-->	
+	{% include "footer.html" %} 
+ {% include "scripts.html" %} 
+	<!--================ End footer Area  =================-->
+</body>
+</html>

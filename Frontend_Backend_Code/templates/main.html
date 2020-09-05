@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('customer', this, 'red')">Customer Login</button>
+<button class="tablink" onclick="openPage('manager', this, 'green')" id="defaultOpen">Manager Login</button>
+<button class="tablink" onclick="openPage('register', this, 'blue')">Customer Register</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+
+<div id="customer" class="tabcontent">
+  <h3>Customer Login</h3>
+  <a href="{{ url_for('login_customer') }}" class="active">Login As Customer</a>
+</div>
+
+<div id="manager" class="tabcontent">
+  <h3>Manager Login</h3>
+  <a href="{{ url_for('manager_login') }}" class="active">Login As Manager</a>
+</div>
+
+<div id="register" class="tabcontent">
+  <h3>Customer Registration</h3>
+  <a href="{{ url_for('customer_registration') }}" class="active">New Customer</a>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
